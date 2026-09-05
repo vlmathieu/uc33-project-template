@@ -42,6 +42,8 @@ doc/            notes, reports, Quarto
 2. Open `uc33-project.Rproj` in RStudio, **and** the folder in VS Code.
 3. Open `src/01_import.R`. It contains three deliberate problems: that is the subject of
    lab 1.
+4. `src/02_cleaning.R` is the starting point for lab 2 — a header and a loading line
+   that does not yet work. Leave it alone until then.
 
 ## What this README should say in YOUR project
 
