@@ -1,0 +1,8 @@
+# Project parameters.
+# Rule: no hard-coded value in the scripts. Anything that can change lives here.
+
+input_file: data/raw/comtrade_fr_roundwood_clean.csv
+output_file: data/processed/trade_france.csv
+
+country: France
+exclude_partner_aggregate: true

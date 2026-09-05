@@ -1,0 +1,23 @@
+# Outputs: the CONTENT is regenerable and never versioned, but the folder
+# structure must exist -- otherwise a script writing to output/figures/ fails
+# for whoever has just downloaded the project.
+output/figures/*
+output/tables/*
+!output/figures/.gitkeep
+!output/tables/.gitkeep
+
+# Processed data: regenerable too
+data/processed/*
+!data/processed/.gitkeep
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python
+__pycache__/
+.venv/
+
+# System
+.DS_Store
