@@ -12,7 +12,9 @@ until then. Then rename the folder and the `.Rproj` file.
 data/
   raw/          inputs. NEVER modified, never overwritten.
   processed/    produced by the scripts. Regenerable.
-src/            the scripts, prefixed 01_, 02_, ... in run order
+src/            the scripts, prefixed 01_, 02_, 03_ in run order.
+                Each reads a file on disk and writes one: no script depends
+                on something another one left in memory.
 output/
   figures/      regenerable. Deletable without regret.
   tables/
@@ -43,7 +45,8 @@ doc/            notes, reports, Quarto
 3. Open `src/01_import.R`. It contains three deliberate problems: that is the subject of
    lab 1.
 4. `src/02_cleaning.R` is the starting point for lab 2 — a header and a loading line
-   that does not yet work. Leave it alone until then.
+   that does not yet work. `src/03_figure.R` is lab 2's last step, and is written for
+   you. Leave both alone until then.
 
 ## What this README should say in YOUR project
 
