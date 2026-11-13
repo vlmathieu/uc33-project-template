@@ -3,8 +3,58 @@
 A reproducible project skeleton. Starting point for lab 1 on 7 September, and the
 template for your projects for the rest of the year.
 
-**To use it**: green *Use this template* button (from October), or *Code → Download ZIP*
-until then. Then rename the folder and the `.Rproj` file.
+## Getting the repository
+
+1. On GitHub, open
+   [vlmathieu/uc33-project-template](https://github.com/vlmathieu/uc33-project-template)
+   and click **Use this template → Create a new repository**. Name it after your
+   project, keep it **private**, and add your teammates under
+   *Settings → Collaborators*.
+
+2. Clone **your** copy — not this one:
+
+   ```
+   git clone https://github.com/<your-account>/<your-project>.git
+   cd <your-project>
+   ```
+
+3. Check which repository you are actually in:
+
+   ```
+   git remote -v
+   ```
+
+   It must print `<your-account>/<your-project>`. If it prints `vlmathieu/...` you
+   cloned the template itself: delete the folder and start again at step 1.
+
+With the GitHub CLI, steps 1 and 2 are one line:
+
+```
+gh repo create <your-project> --template vlmathieu/uc33-project-template --private --clone
+```
+
+No GitHub account yet: *Code → Download ZIP*, unzip, then run `git init` in the folder.
+
+## First 15 minutes — starting a project of your own
+
+Doing lab 1? Skip this section: the scripts in `src/` **are** the lab.
+
+Otherwise, rename and delete before you write a line of your own. A template is a
+starting point, not a folder to hand in as you found it.
+
+**Rename**
+
+- [ ] the folder itself
+- [ ] `uc33-project.Rproj` → `<your-project>.Rproj` — nothing inside the file holds the
+      name, so renaming it is enough
+- [ ] this README, in full. See *What this README should say in YOUR project* below.
+- [ ] the values in `config/config.yml`. They are a UC 3.3 example, not settings to keep.
+
+**Delete**
+
+- [ ] every script in `src/` **whose header names a lab**. They are course exercises and
+      have nothing to do with your project.
+- [ ] the language twin you do not use: either the `.R` files or the `.py` files, not both.
 
 ## Layout
 
@@ -20,8 +70,29 @@ output/
   tables/
 config/
   config.yml    the parameters. No hard-coded value in the scripts.
-doc/            notes, reports, Quarto
+deliverables/
+  01-report/    the report
+  02-slides/    the presentation
+doc/            working notes, bibliography, annexes
 ```
+
+`deliverables/` holds what is graded. `doc/` holds what is still in progress. When you
+cannot tell which of the two a file belongs in, it belongs in `doc/`.
+
+Project-management material — charter, scoping note, logbook, project review, peer
+assessment — is **not** in this repository, and must not be added to it. It is handed in
+separately, because those documents discuss people and this repository is read by your
+whole team. A sentence written where your teammates will read it tonight is not the
+sentence you would have written for your supervisor.
+
+## Language
+
+- Paths, folder names, file names, code, variable names, commit messages: **English**.
+- The report and the slides: **the working language set at project launch** (scoping
+  note, section 1). State it in this README, in one line.
+
+Nobody translates a document to satisfy a folder name, and nobody puts an accent in a
+folder name to match a document.
 
 ## The four rules
 
@@ -50,6 +121,25 @@ doc/            notes, reports, Quarto
 
 ## What this README should say in YOUR project
 
-What the folder is for, what has to be installed to run it, and in what order the
-scripts run. Four lines is enough. Those are the four lines your partner will not have
-to ask you for.
+Your repository is one of the graded deliverables, so this file is graded with it. It
+belongs to the member of your team responsible for data and reproducibility — whose
+mandate, in your own scoping note, is "a README that lets a third party replay the
+processing".
+
+**The criterion, and it is testable:** someone who has never seen your project must be
+able to regenerate every figure in your report from `data/raw/` alone, without asking
+you a single question. Your supervisor can try it.
+
+Six points, one to three lines each:
+
+1. **What this repository is** — the question you were asked, and who asked it.
+2. **What has to be installed** — language, version, and the list of packages. Not
+   "install R": the names.
+3. **In what order the scripts run** — and what each one produces.
+4. **Where the data comes from** — source, extraction date, and **what it does not
+   cover**. That last part is the one everyone forgets, and the one that shows.
+5. **Where the deliverables are** — one line pointing to `deliverables/`.
+6. **The working language** — one line.
+
+What this file is not: a summary of your report, a copy of the four rules above — they
+are the template's instructions, not your content — and not a logbook.
